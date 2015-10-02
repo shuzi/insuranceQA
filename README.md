@@ -1,4 +1,8 @@
 This dataset is provided as is and for research purpose only.
+If you publish anything using this data, please cite our paper:
+Applying Deep Learning to Answer Selection: A Study and An Open Task
+Minwei Feng, Bing Xiang, Michael R. Glass, Lidan Wang, Bowen Zhou
+ASRU 2015
 
 ```
 answers.label.token_idx:
@@ -25,4 +29,3 @@ If running time is not a problem for your applicaiton, you are surely encouraged
 vocabulary
 <word index><TAB><original word>
 ```
-
