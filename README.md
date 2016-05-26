@@ -31,5 +31,10 @@ ASRU 2015
  -  ```<word index><TAB><original word>```
 
 ### Corpus Statistics
-
+|               | Question      |  Answer  | Question Running Words  | 
+| ------------- |:-------------:| -----:|   -----:|           
+| Train      | 12,889 | 21,325  |    107,889        |
+| Valid      | 2,000     |  3354 |   16,931          |
+| Test       | 2,000      |    3308 |  16,815            |
+There are totally 27,413 answers (answer set size is 27,413) with the 3,065,492 running words of answers.
 
