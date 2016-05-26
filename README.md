@@ -1,31 +1,35 @@
+# InsuranceQA Corpus
+
 This dataset is provided as is and for research purpose only.
 If you publish anything using this data, please cite our paper:
 Applying Deep Learning to Answer Selection: A Study and An Open Task
 Minwei Feng, Bing Xiang, Michael R. Glass, Lidan Wang, Bowen Zhou
 ASRU 2015
 
-```
-answers.label.token_idx:
-<answer label><TAB><answer text in word index form>  
-To get the word of from its index idx_* ,  please use the file vocabulary
-```
+### Introduction
+
+* This corpus contains questions and answers collected from the website [Insurance Library](http://www.insurancelibrary.com/).
+* To our best knowledge, this is the first released QA corpus in the insurance domain
+* The content of this corpus consists of questions from real world users, the answers with high quality were composed by professionals with deep domain knowledge. So this is an application with real value, not a toy task.
+* In the above paper, the corpus is used for answer selection task. On the other hand, other usage of this corpus is also possible. For example, autonomous learning by reading comprehension of the answers, learning by observation, etc, such that a system can finally come up with its own answer to unseen questions.
+* Any ideas to further augment this data set are welcomed. 
 
 
-```
-question.train.token_idx.label:
-<question text in word index form><TAB><answer labels>
-To get the word of from its index idx_* ,  please use the file vocabulary
-```
+### Format
+* Latest version is V2, please use the files in the V2 folder. 
+* File name that includes `raw` contains text with original version.
+* File name that includes `token` contains text tokenized with [Stanford Tokenizer](http://nlp.stanford.edu/software/tokenizer.shtml).
+* We split the whoe corpus into train/valid/test three parts. File name that includes `train/valid/test` corresponds to each part.
+* For all tokens starting with `idx_ `, please refer to the vocabulary file for the corresponding word.
+* For all train/valid/test files, format is same, with various answer pool size:
+ -   ``` <Domain><TAB><QUESTION><TAB><Groundtruth><TAB><Pool>```
+* For InsuranceQA.question.anslabel.*:
+ -   ```<Domain><TAB><QUESTION><TAB><Groundtruth>```
+* For InsuranceQA.label2answer.*
+ -  ```<Answer Label><TAB><Answer Text>```
+* For vocabulary file:
+ -  ```<word index><TAB><original word>```
 
-```
-question.(dev|test1|test2).label.token_idx.pool:
-<ground truth labels><TAB><question text in word index form><TAB><answer candidate pool>
-To get the word of from its index idx_* ,  please use the file vocabulary
-Notice we make an answer candidate pool with size 500 here for dev, test1 and test2.
-If running time is not a problem for your applicaiton, you are surely encouraged to use the whole answer set as the pool (label 1-24981).
-```
+### Corpus Statistics
 
-```
-vocabulary
-<word index><TAB><original word>
-```
+
